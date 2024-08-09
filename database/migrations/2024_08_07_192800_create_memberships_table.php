@@ -1,5 +1,5 @@
 <?php
-// filename: 2024_08_07_000006_create_memberships_table.php
+// filename: 2024_08_07_190618_create_memberships_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,12 +15,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('memberships', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('family_id')->constrained()->onDelete('cascade');
-            $table->foreignId('school_id')->constrained()->onDelete('cascade');
+            $table->increments('id'); // Primary key as increments
+            $table->unsignedInteger('family_id'); // Foreign key as unsignedInteger
+            $table->unsignedInteger('school_id'); // Foreign key as unsignedInteger
+            $table->unsignedInteger('created_by')->nullable(); // Foreign key as unsignedInteger
+            $table->unsignedInteger('updated_by')->nullable(); // Foreign key as unsignedInteger
             $table->timestamps();
-            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
-            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 

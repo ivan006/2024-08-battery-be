@@ -15,11 +15,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('families', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id'); // Primary key as increments
             $table->string('name');
-            $table->unsignedInteger('user_id'); // Change to unsignedInteger to match users table
-            $table->unsignedInteger('created_by')->nullable(); // Change to unsignedInteger
-            $table->unsignedInteger('updated_by')->nullable(); // Change to unsignedInteger
+            $table->unsignedInteger('user_id'); // Foreign key as unsignedInteger
+            $table->unsignedInteger('created_by')->nullable(); // Foreign key as unsignedInteger
+            $table->unsignedInteger('updated_by')->nullable(); // Foreign key as unsignedInteger
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

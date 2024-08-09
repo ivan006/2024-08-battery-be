@@ -1,5 +1,5 @@
 <?php
-// filename: 2024_08_07_000004_create_events_table.php
+// filename: 2024_08_07_190616_create_events_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -15,14 +15,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id'); // Primary key as increments
             $table->string('name');
             $table->dateTime('start_datetime');
             $table->dateTime('end_datetime');
-            $table->foreignId('school_id')->constrained()->onDelete('cascade');
+            $table->unsignedInteger('school_id'); // Foreign key as unsignedInteger
+            $table->unsignedInteger('created_by')->nullable(); // Foreign key as unsignedInteger
+            $table->unsignedInteger('updated_by')->nullable(); // Foreign key as unsignedInteger
             $table->timestamps();
-            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
-            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 
