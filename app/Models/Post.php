@@ -18,39 +18,42 @@ class Post extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
+            
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            'tags' => []
+            
         ];
     }
 
     public function childRelationships()
     {
         return [
+            
         ];
     }
 
     public function rules()
     {
         return [
-            'name' => 'required',
             'created_at' => 'nullable',
-            'updated_at' => 'nullable'
+            'updated_at' => 'nullable',
+            'name' => 'required'
         ];
     }
 
     protected $fillable = [
-        'name' ,
         'created_at',
         'updated_at',
+        'name'
     ];
 
-    public function tags(): BelongsToMany
-    {
-        return $this->belongsToMany(Tag::class);
-    }
+    
+
+    
+
+    
 }

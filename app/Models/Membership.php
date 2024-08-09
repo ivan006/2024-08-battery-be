@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Tag extends OrmApiBaseModel
+class Membership extends OrmApiBaseModel
 {
-    protected $table = 'tags';
+    protected $table = 'memberships';
 
     public $timestamps = false;
 
@@ -25,7 +25,7 @@ class Tag extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            'posts' => []
+            
         ];
     }
 
@@ -39,24 +39,27 @@ class Tag extends OrmApiBaseModel
     public function rules()
     {
         return [
+            'family_id' => 'required',
+            'school_id' => 'required',
+            'created_by' => 'nullable',
+            'updated_by' => 'nullable',
             'created_at' => 'nullable',
-            'updated_at' => 'nullable',
-            'name' => 'required'
+            'updated_at' => 'nullable'
         ];
     }
 
     protected $fillable = [
+        'family_id',
+        'school_id',
+        'created_by',
+        'updated_by',
         'created_at',
-        'updated_at',
-        'name'
+        'updated_at'
     ];
 
     
 
     
 
-        public function posts(): BelongsToMany
-    {
-        return $this->belongsToMany(Post::class, 'post_tags', 'post_id', 'tags_id');
-    }
+    
 }
