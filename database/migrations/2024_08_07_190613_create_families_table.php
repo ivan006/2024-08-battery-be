@@ -1,4 +1,5 @@
 <?php
+// filename: 2024_08_07_190613_create_families_table.php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,10 +17,14 @@ return new class extends Migration
         Schema::create('families', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->unsignedInteger('user_id'); // Change to unsignedInteger to match users table
+            $table->unsignedInteger('created_by')->nullable(); // Change to unsignedInteger
+            $table->unsignedInteger('updated_by')->nullable(); // Change to unsignedInteger
             $table->timestamps();
-            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('set null');
-            $table->foreignId('updated_by')->nullable()->constrained('users')->onDelete('set null');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
         });
     }
 
