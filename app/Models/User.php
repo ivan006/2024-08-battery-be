@@ -32,7 +32,20 @@ class User extends OrmApiBaseModel
     public function childRelationships()
     {
         return [
-            
+            'attendances_created_by' => [],
+            'attendances_updated_by' => [],
+            'children_created_by' => [],
+            'children_updated_by' => [],
+            'events_created_by' => [],
+            'events_updated_by' => [],
+            'families_created_by' => [],
+            'families_updated_by' => [],
+            'families_user_id' => [],
+            'memberships_created_by' => [],
+            'memberships_updated_by' => [],
+            'schools_created_by' => [],
+            'schools_updated_by' => [],
+            'schools_user_id' => []
         ];
     }
 
@@ -65,7 +78,75 @@ class User extends OrmApiBaseModel
 
     
 
-    
+        public function attendances_created_by(): HasMany
+    {
+        return $this->hasMany(Attendance::class, 'created_by');
+    }
+
+        public function attendances_updated_by(): HasMany
+    {
+        return $this->hasMany(Attendance::class, 'updated_by');
+    }
+
+        public function children_created_by(): HasMany
+    {
+        return $this->hasMany(Child::class, 'created_by');
+    }
+
+        public function children_updated_by(): HasMany
+    {
+        return $this->hasMany(Child::class, 'updated_by');
+    }
+
+        public function events_created_by(): HasMany
+    {
+        return $this->hasMany(Event::class, 'created_by');
+    }
+
+        public function events_updated_by(): HasMany
+    {
+        return $this->hasMany(Event::class, 'updated_by');
+    }
+
+        public function families_created_by(): HasMany
+    {
+        return $this->hasMany(Family::class, 'created_by');
+    }
+
+        public function families_updated_by(): HasMany
+    {
+        return $this->hasMany(Family::class, 'updated_by');
+    }
+
+        public function families_user_id(): HasMany
+    {
+        return $this->hasMany(Family::class, 'user_id');
+    }
+
+        public function memberships_created_by(): HasMany
+    {
+        return $this->hasMany(Membership::class, 'created_by');
+    }
+
+        public function memberships_updated_by(): HasMany
+    {
+        return $this->hasMany(Membership::class, 'updated_by');
+    }
+
+        public function schools_created_by(): HasMany
+    {
+        return $this->hasMany(School::class, 'created_by');
+    }
+
+        public function schools_updated_by(): HasMany
+    {
+        return $this->hasMany(School::class, 'updated_by');
+    }
+
+        public function schools_user_id(): HasMany
+    {
+        return $this->hasMany(School::class, 'user_id');
+    }
 
     
 }

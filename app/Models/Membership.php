@@ -18,7 +18,10 @@ class Membership extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+            'family' => [],
+            'school' => [],
+            'created_by' => [],
+            'updated_by' => []
         ];
     }
 
@@ -57,7 +60,25 @@ class Membership extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
+        public function family(): BelongsTo
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
+
+        public function school(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id');
+    }
+
+        public function created_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+        public function updated_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by');
+    }
 
     
 

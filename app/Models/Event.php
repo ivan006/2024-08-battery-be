@@ -18,7 +18,9 @@ class Event extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+            'school' => [],
+            'created_by' => [],
+            'updated_by' => []
         ];
     }
 
@@ -32,7 +34,7 @@ class Event extends OrmApiBaseModel
     public function childRelationships()
     {
         return [
-            
+            'attendances' => []
         ];
     }
 
@@ -61,9 +63,25 @@ class Event extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
+        public function school(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id');
+    }
 
-    
+        public function created_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+        public function updated_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by');
+    }
+
+        public function attendances(): HasMany
+    {
+        return $this->hasMany(Attendance::class, 'event_id');
+    }
 
     
 }

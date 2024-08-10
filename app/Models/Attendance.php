@@ -18,7 +18,10 @@ class Attendance extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+            'event' => [],
+            'child' => [],
+            'created_by' => [],
+            'updated_by' => []
         ];
     }
 
@@ -57,7 +60,25 @@ class Attendance extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
+        public function event(): BelongsTo
+    {
+        return $this->belongsTo(Event::class, 'event_id');
+    }
+
+        public function child(): BelongsTo
+    {
+        return $this->belongsTo(Child::class, 'child_id');
+    }
+
+        public function created_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+        public function updated_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by');
+    }
 
     
 

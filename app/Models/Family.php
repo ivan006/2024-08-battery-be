@@ -18,7 +18,9 @@ class Family extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+            'user' => [],
+            'created_by' => [],
+            'updated_by' => []
         ];
     }
 
@@ -32,7 +34,8 @@ class Family extends OrmApiBaseModel
     public function childRelationships()
     {
         return [
-            
+            'children' => [],
+            'memberships' => []
         ];
     }
 
@@ -57,9 +60,30 @@ class Family extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
+        public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
-    
+        public function created_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
+
+        public function updated_by(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'updated_by');
+    }
+
+        public function children(): HasMany
+    {
+        return $this->hasMany(Child::class, 'family_id');
+    }
+
+        public function memberships(): HasMany
+    {
+        return $this->hasMany(Membership::class, 'family_id');
+    }
 
     
 }
