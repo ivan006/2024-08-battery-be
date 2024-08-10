@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
 use QuicklistsOrmApi\Http\Controllers\Controller;
-use QuicklistsOrmApi\Models\Post;
+use QuicklistsOrmApi\Models\PostTag;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class PostTagController extends Controller
 {
-    protected $itemNameSingular = "Post";
+    protected $itemNameSingular = "Post Tag";
     protected $model;
 
     public function __construct()
     {
-        $this->model = new Post();
+        $this->model = new PostTag();
     }
 
     /**

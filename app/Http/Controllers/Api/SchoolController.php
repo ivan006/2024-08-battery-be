@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
 use QuicklistsOrmApi\Http\Controllers\Controller;
-use QuicklistsOrmApi\Models\Post;
+use QuicklistsOrmApi\Models\School;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class SchoolController extends Controller
 {
-    protected $itemNameSingular = "Post";
+    protected $itemNameSingular = "School";
     protected $model;
 
     public function __construct()
     {
-        $this->model = new Post();
+        $this->model = new School();
     }
 
     /**
