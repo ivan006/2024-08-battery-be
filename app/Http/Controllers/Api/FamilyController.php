@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers\Controller;
+use QuicklistsOrmApi\Http\Controllers;
 use QuicklistsOrmApi\Models\Family;
 use Illuminate\Http\Request;
 
