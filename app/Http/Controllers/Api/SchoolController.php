@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\School;
+use App\Http\Controllers\Controller;
+use App\Models\School;
 use Illuminate\Http\Request;
 
 class SchoolController extends Controller

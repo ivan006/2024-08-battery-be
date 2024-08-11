@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\PostTag;
+use App\Http\Controllers\Controller;
+use App\Models\PostTag;
 use Illuminate\Http\Request;
 
 class PostTagController extends Controller

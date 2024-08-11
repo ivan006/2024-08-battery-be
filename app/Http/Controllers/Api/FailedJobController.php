@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\FailedJob;
+use App\Http\Controllers\Controller;
+use App\Models\FailedJob;
 use Illuminate\Http\Request;
 
 class FailedJobController extends Controller

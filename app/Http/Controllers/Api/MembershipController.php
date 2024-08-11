@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\Membership;
+use App\Http\Controllers\Controller;
+use App\Models\Membership;
 use Illuminate\Http\Request;
 
 class MembershipController extends Controller

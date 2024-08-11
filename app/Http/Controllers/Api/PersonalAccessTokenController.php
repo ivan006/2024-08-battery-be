@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\PersonalAccessToken;
+use App\Http\Controllers\Controller;
+use App\Models\PersonalAccessToken;
 use Illuminate\Http\Request;
 
 class PersonalAccessTokenController extends Controller

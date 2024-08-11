@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\Migration;
+use App\Http\Controllers\Controller;
+use App\Models\Migration;
 use Illuminate\Http\Request;
 
 class MigrationController extends Controller

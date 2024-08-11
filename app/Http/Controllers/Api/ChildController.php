@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\Child;
+use App\Http\Controllers\Controller;
+use App\Models\Child;
 use Illuminate\Http\Request;
 
 class ChildController extends Controller

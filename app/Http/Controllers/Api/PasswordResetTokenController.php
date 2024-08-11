@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
-use QuicklistsOrmApi\Http\Controllers;
-use QuicklistsOrmApi\Models\PasswordResetToken;
+use App\Http\Controllers\Controller;
+use App\Models\PasswordResetToken;
 use Illuminate\Http\Request;
 
 class PasswordResetTokenController extends Controller
