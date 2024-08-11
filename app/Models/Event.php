@@ -19,15 +19,15 @@ class Event extends OrmApiBaseModel
     {
         return [
             'school' => [],
-            'creator_id' => [],
-            'updater_id' => []
+            'creator' => [],
+            'updater' => []
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -68,12 +68,12 @@ class Event extends OrmApiBaseModel
         return $this->belongsTo(School::class, 'school_id');
     }
 
-        public function creator_id(): BelongsTo
+        public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'creator_id');
     }
 
-        public function updater_id(): BelongsTo
+        public function updater(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updater_id');
     }
@@ -83,5 +83,5 @@ class Event extends OrmApiBaseModel
         return $this->hasMany(Attendance::class, 'event_id');
     }
 
-
+    
 }

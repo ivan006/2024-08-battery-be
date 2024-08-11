@@ -20,22 +20,22 @@ class Attendance extends OrmApiBaseModel
         return [
             'event' => [],
             'child' => [],
-            'creator_id' => [],
-            'updater_id' => []
+            'creator' => [],
+            'updater' => []
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-
+            
         ];
     }
 
     public function childRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -70,17 +70,17 @@ class Attendance extends OrmApiBaseModel
         return $this->belongsTo(Child::class, 'child_id');
     }
 
-        public function creator_id(): BelongsTo
+        public function creator(): BelongsTo
     {
         return $this->belongsTo(User::class, 'creator_id');
     }
 
-        public function updater_id(): BelongsTo
+        public function updater(): BelongsTo
     {
         return $this->belongsTo(User::class, 'updater_id');
     }
 
+    
 
-
-
+    
 }

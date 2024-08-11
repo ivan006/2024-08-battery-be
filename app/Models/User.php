@@ -18,14 +18,14 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-
+            
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -76,7 +76,7 @@ class User extends OrmApiBaseModel
         'updated_at'
     ];
 
-
+    
 
         public function attendances_creator_id(): HasMany
     {
@@ -148,5 +148,5 @@ class User extends OrmApiBaseModel
         return $this->hasMany(School::class, 'user_id');
     }
 
-
+    
 }
