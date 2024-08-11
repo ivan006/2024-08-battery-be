@@ -20,22 +20,22 @@ class Membership extends OrmApiBaseModel
         return [
             'family' => [],
             'school' => [],
-            'created_by' => [],
-            'updated_by' => []
+            'creator_id' => [],
+            'updater_id' => []
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function childRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -44,8 +44,8 @@ class Membership extends OrmApiBaseModel
         return [
             'family_id' => 'required',
             'school_id' => 'required',
-            'created_by' => 'nullable',
-            'updated_by' => 'nullable',
+            'creator_id' => 'nullable',
+            'updater_id' => 'nullable',
             'created_at' => 'nullable',
             'updated_at' => 'nullable'
         ];
@@ -54,8 +54,8 @@ class Membership extends OrmApiBaseModel
     protected $fillable = [
         'family_id',
         'school_id',
-        'created_by',
-        'updated_by',
+        'creator_id',
+        'updater_id',
         'created_at',
         'updated_at'
     ];
@@ -70,17 +70,17 @@ class Membership extends OrmApiBaseModel
         return $this->belongsTo(School::class, 'school_id');
     }
 
-        public function created_by(): BelongsTo
+        public function creator_id(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'creator_id');
     }
 
-        public function updated_by(): BelongsTo
+        public function updater_id(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'updated_by');
+        return $this->belongsTo(User::class, 'updater_id');
     }
 
-    
 
-    
+
+
 }

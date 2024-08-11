@@ -18,13 +18,13 @@ return new class extends Migration
             $table->increments('id'); // Primary key as increments
             $table->string('name');
             $table->unsignedInteger('family_id'); // Foreign key as unsignedInteger
-            $table->unsignedInteger('created_by')->nullable(); // Foreign key as unsignedInteger
-            $table->unsignedInteger('updated_by')->nullable(); // Foreign key as unsignedInteger
+            $table->unsignedInteger('creator_id')->nullable(); // Foreign key as unsignedInteger
+            $table->unsignedInteger('updater_id')->nullable(); // Foreign key as unsignedInteger
             $table->timestamps();
 
             $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
-            $table->foreign('created_by')->references('id')->on('users')->onDelete('set null');
-            $table->foreign('updated_by')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('creator_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('updater_id')->references('id')->on('users')->onDelete('set null');
         });
     }
 

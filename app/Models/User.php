@@ -18,33 +18,33 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function childRelationships()
     {
         return [
-            'attendances_created_by' => [],
-            'attendances_updated_by' => [],
-            'children_created_by' => [],
-            'children_updated_by' => [],
-            'events_created_by' => [],
-            'events_updated_by' => [],
-            'families_created_by' => [],
-            'families_updated_by' => [],
+            'attendances_creator_id' => [],
+            'attendances_updater_id' => [],
+            'children_creator_id' => [],
+            'children_updater_id' => [],
+            'events_creator_id' => [],
+            'events_updater_id' => [],
+            'families_creator_id' => [],
+            'families_updater_id' => [],
             'families_user_id' => [],
-            'memberships_created_by' => [],
-            'memberships_updated_by' => [],
-            'schools_created_by' => [],
-            'schools_updated_by' => [],
+            'memberships_creator_id' => [],
+            'memberships_updater_id' => [],
+            'schools_creator_id' => [],
+            'schools_updater_id' => [],
             'schools_user_id' => []
         ];
     }
@@ -76,46 +76,46 @@ class User extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
 
-        public function attendances_created_by(): HasMany
+
+        public function attendances_creator_id(): HasMany
     {
-        return $this->hasMany(Attendance::class, 'created_by');
+        return $this->hasMany(Attendance::class, 'creator_id');
     }
 
-        public function attendances_updated_by(): HasMany
+        public function attendances_updater_id(): HasMany
     {
-        return $this->hasMany(Attendance::class, 'updated_by');
+        return $this->hasMany(Attendance::class, 'updater_id');
     }
 
-        public function children_created_by(): HasMany
+        public function children_creator_id(): HasMany
     {
-        return $this->hasMany(Child::class, 'created_by');
+        return $this->hasMany(Child::class, 'creator_id');
     }
 
-        public function children_updated_by(): HasMany
+        public function children_updater_id(): HasMany
     {
-        return $this->hasMany(Child::class, 'updated_by');
+        return $this->hasMany(Child::class, 'updater_id');
     }
 
-        public function events_created_by(): HasMany
+        public function events_creator_id(): HasMany
     {
-        return $this->hasMany(Event::class, 'created_by');
+        return $this->hasMany(Event::class, 'creator_id');
     }
 
-        public function events_updated_by(): HasMany
+        public function events_updater_id(): HasMany
     {
-        return $this->hasMany(Event::class, 'updated_by');
+        return $this->hasMany(Event::class, 'updater_id');
     }
 
-        public function families_created_by(): HasMany
+        public function families_creator_id(): HasMany
     {
-        return $this->hasMany(Family::class, 'created_by');
+        return $this->hasMany(Family::class, 'creator_id');
     }
 
-        public function families_updated_by(): HasMany
+        public function families_updater_id(): HasMany
     {
-        return $this->hasMany(Family::class, 'updated_by');
+        return $this->hasMany(Family::class, 'updater_id');
     }
 
         public function families_user_id(): HasMany
@@ -123,24 +123,24 @@ class User extends OrmApiBaseModel
         return $this->hasMany(Family::class, 'user_id');
     }
 
-        public function memberships_created_by(): HasMany
+        public function memberships_creator_id(): HasMany
     {
-        return $this->hasMany(Membership::class, 'created_by');
+        return $this->hasMany(Membership::class, 'creator_id');
     }
 
-        public function memberships_updated_by(): HasMany
+        public function memberships_updater_id(): HasMany
     {
-        return $this->hasMany(Membership::class, 'updated_by');
+        return $this->hasMany(Membership::class, 'updater_id');
     }
 
-        public function schools_created_by(): HasMany
+        public function schools_creator_id(): HasMany
     {
-        return $this->hasMany(School::class, 'created_by');
+        return $this->hasMany(School::class, 'creator_id');
     }
 
-        public function schools_updated_by(): HasMany
+        public function schools_updater_id(): HasMany
     {
-        return $this->hasMany(School::class, 'updated_by');
+        return $this->hasMany(School::class, 'updater_id');
     }
 
         public function schools_user_id(): HasMany
@@ -148,5 +148,5 @@ class User extends OrmApiBaseModel
         return $this->hasMany(School::class, 'user_id');
     }
 
-    
+
 }

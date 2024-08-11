@@ -19,15 +19,15 @@ class Child extends OrmApiBaseModel
     {
         return [
             'family' => [],
-            'created_by' => [],
-            'updated_by' => []
+            'creator_id' => [],
+            'updater_id' => []
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -43,8 +43,8 @@ class Child extends OrmApiBaseModel
         return [
             'name' => 'required',
             'family_id' => 'required',
-            'created_by' => 'nullable',
-            'updated_by' => 'nullable',
+            'creator_id' => 'nullable',
+            'updater_id' => 'nullable',
             'created_at' => 'nullable',
             'updated_at' => 'nullable'
         ];
@@ -53,8 +53,8 @@ class Child extends OrmApiBaseModel
     protected $fillable = [
         'name',
         'family_id',
-        'created_by',
-        'updated_by',
+        'creator_id',
+        'updater_id',
         'created_at',
         'updated_at'
     ];
@@ -64,14 +64,14 @@ class Child extends OrmApiBaseModel
         return $this->belongsTo(Family::class, 'family_id');
     }
 
-        public function created_by(): BelongsTo
+        public function creator_id(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'created_by');
+        return $this->belongsTo(User::class, 'creator_id');
     }
 
-        public function updated_by(): BelongsTo
+        public function updater_id(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'updated_by');
+        return $this->belongsTo(User::class, 'updater_id');
     }
 
         public function attendances(): HasMany
@@ -79,5 +79,5 @@ class Child extends OrmApiBaseModel
         return $this->hasMany(Attendance::class, 'child_id');
     }
 
-    
+
 }
