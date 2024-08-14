@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use QuicklistsOrmApi\OrmApiBaseModel;
 
-class School extends OrmApiBaseModel
+class SchoolFamilyEnrollment extends OrmApiBaseModel
 {
-    protected $table = 'schools';
+    protected $table = 'school_family_enrollment';
 
     public $timestamps = false;
 
@@ -17,6 +16,8 @@ class School extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
+            'family' => [],
+            'school' => [],
             'creator' => [],
             'updater' => []
         ];
@@ -32,16 +33,15 @@ class School extends OrmApiBaseModel
     public function childRelationships()
     {
         return [
-            'events' => [],
-            'school_family_enrollments' => [],
-            'school_partnerships' => []
+
         ];
     }
 
     public function rules()
     {
         return [
-            'name' => 'required',
+            'family_id' => 'required',
+            'school_id' => 'required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
@@ -50,12 +50,23 @@ class School extends OrmApiBaseModel
     }
 
     protected $fillable = [
-        'name',
+        'family_id',
+        'school_id',
         'creator_id',
         'updater_id',
         'created_at',
         'updated_at'
     ];
+
+        public function family(): BelongsTo
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
+
+        public function school(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id');
+    }
 
         public function creator(): BelongsTo
     {
@@ -67,20 +78,7 @@ class School extends OrmApiBaseModel
         return $this->belongsTo(User::class, 'updater_id');
     }
 
-        public function events(): HasMany
-    {
-        return $this->hasMany(Event::class, 'school_id');
-    }
 
-        public function school_family_enrollments(): HasMany
-    {
-        return $this->hasMany(SchoolFamilyEnrollment::class, 'school_id');
-    }
-
-        public function school_partnerships(): HasMany
-    {
-        return $this->hasMany(SchoolPartnership::class, 'school_id');
-    }
 
 
 }

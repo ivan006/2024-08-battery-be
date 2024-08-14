@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use QuicklistsOrmApi\OrmApiBaseModel;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use QuicklistsOrmApi\OrmApiBaseModel;
 
 class User extends OrmApiBaseModel
 {
@@ -18,14 +16,14 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -40,12 +38,12 @@ class User extends OrmApiBaseModel
             'events_updater_id' => [],
             'families_creator_id' => [],
             'families_updater_id' => [],
-            'families_user_id' => [],
-            'memberships_creator_id' => [],
-            'memberships_updater_id' => [],
+            'family_memberships' => [],
+            'school_family_enrollments_creator_id' => [],
+            'school_family_enrollments_updater_id' => [],
+            'school_partnerships' => [],
             'schools_creator_id' => [],
-            'schools_updater_id' => [],
-            'schools_user_id' => []
+            'schools_updater_id' => []
         ];
     }
 
@@ -76,7 +74,7 @@ class User extends OrmApiBaseModel
         'updated_at'
     ];
 
-    
+
 
         public function attendances_creator_id(): HasMany
     {
@@ -118,19 +116,24 @@ class User extends OrmApiBaseModel
         return $this->hasMany(Family::class, 'updater_id');
     }
 
-        public function families_user_id(): HasMany
+        public function family_memberships(): HasMany
     {
-        return $this->hasMany(Family::class, 'user_id');
+        return $this->hasMany(FamilyMembership::class, 'user_id');
     }
 
-        public function memberships_creator_id(): HasMany
+        public function school_family_enrollments_creator_id(): HasMany
     {
-        return $this->hasMany(Membership::class, 'creator_id');
+        return $this->hasMany(SchoolFamilyEnrollment::class, 'creator_id');
     }
 
-        public function memberships_updater_id(): HasMany
+        public function school_family_enrollments_updater_id(): HasMany
     {
-        return $this->hasMany(Membership::class, 'updater_id');
+        return $this->hasMany(SchoolFamilyEnrollment::class, 'updater_id');
+    }
+
+        public function school_partnerships(): HasMany
+    {
+        return $this->hasMany(SchoolPartnership::class, 'user_id');
     }
 
         public function schools_creator_id(): HasMany
@@ -143,10 +146,5 @@ class User extends OrmApiBaseModel
         return $this->hasMany(School::class, 'updater_id');
     }
 
-        public function schools_user_id(): HasMany
-    {
-        return $this->hasMany(School::class, 'user_id');
-    }
 
-    
 }

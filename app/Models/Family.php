@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use QuicklistsOrmApi\OrmApiBaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use QuicklistsOrmApi\OrmApiBaseModel;
 
 class Family extends OrmApiBaseModel
 {
@@ -18,7 +17,6 @@ class Family extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            'user' => [],
             'creator' => [],
             'updater' => []
         ];
@@ -27,7 +25,7 @@ class Family extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -35,7 +33,8 @@ class Family extends OrmApiBaseModel
     {
         return [
             'children' => [],
-            'memberships' => []
+            'family_memberships' => [],
+            'school_family_enrollments' => []
         ];
     }
 
@@ -43,7 +42,6 @@ class Family extends OrmApiBaseModel
     {
         return [
             'name' => 'required',
-            'user_id' => 'required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
@@ -53,17 +51,11 @@ class Family extends OrmApiBaseModel
 
     protected $fillable = [
         'name',
-        'user_id',
         'creator_id',
         'updater_id',
         'created_at',
         'updated_at'
     ];
-
-        public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
-    }
 
         public function creator(): BelongsTo
     {
@@ -80,10 +72,15 @@ class Family extends OrmApiBaseModel
         return $this->hasMany(Child::class, 'family_id');
     }
 
-        public function memberships(): HasMany
+        public function family_memberships(): HasMany
     {
-        return $this->hasMany(Membership::class, 'family_id');
+        return $this->hasMany(FamilyMembership::class, 'family_id');
     }
 
-    
+        public function school_family_enrollments(): HasMany
+    {
+        return $this->hasMany(SchoolFamilyEnrollment::class, 'family_id');
+    }
+
+
 }
