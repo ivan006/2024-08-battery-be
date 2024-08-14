@@ -34,8 +34,8 @@ Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
 Route::apiResource('failed-jobs', \App\Http\Controllers\Api\FailedJobController::class);
 // API routes for families
 Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
-// API routes for memberships
-Route::apiResource('memberships', \App\Http\Controllers\Api\MembershipController::class);
+// API routes for family-memberships
+Route::apiResource('family-memberships', \App\Http\Controllers\Api\FamilyMembershipController::class);
 // API routes for migrations
 Route::apiResource('migrations', \App\Http\Controllers\Api\MigrationController::class);
 // API routes for password-reset-tokens
@@ -46,6 +46,10 @@ Route::apiResource('personal-access-tokens', \App\Http\Controllers\Api\PersonalA
 Route::apiResource('post-tags', \App\Http\Controllers\Api\PostTagController::class);
 // API routes for posts
 Route::apiResource('posts', \App\Http\Controllers\Api\PostController::class);
+// API routes for school-family-enrollments
+Route::apiResource('school-family-enrollments', \App\Http\Controllers\Api\SchoolFamilyEnrollmentController::class);
+// API routes for school-partnerships
+Route::apiResource('school-partnerships', \App\Http\Controllers\Api\SchoolPartnershipController::class);
 // API routes for schools
 Route::apiResource('schools', \App\Http\Controllers\Api\SchoolController::class);
 // API routes for tags
