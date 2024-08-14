@@ -8,20 +8,42 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('family_memberships_and_school_partnerships', function (Blueprint $table) {
+        // Create family_memberships table
+        Schema::create('family_memberships', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('family_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('family_id')->references('id')->on('families')->onDelete('cascade');
+        });
+
+        // Create school_partnerships table
+        Schema::create('school_partnerships', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('school_id');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('family_memberships_and_school_partnerships');
+        Schema::dropIfExists('family_memberships');
+        Schema::dropIfExists('school_partnerships');
     }
 };
