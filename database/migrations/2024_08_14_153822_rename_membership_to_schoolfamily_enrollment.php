@@ -8,21 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::table('schoolfamily_enrollment', function (Blueprint $table) {
-            //
-        });
+        Schema::rename('memberships', 'school_family_enrollment');
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::table('schoolfamily_enrollment', function (Blueprint $table) {
-            //
-        });
+        Schema::rename('school_family_enrollment', 'memberships');
     }
 };
