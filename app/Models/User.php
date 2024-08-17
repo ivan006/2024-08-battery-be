@@ -18,14 +18,14 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -54,11 +54,11 @@ class User extends OrmApiBaseModel
         return [
             'old_id' => 'nullable',
             'name' => 'sometimes:required',
-            'email' => 'sometimes:required',
-            'email_verified_at' => 'nullable',
-            'password' => 'sometimes:required',
-            'status' => 'sometimes:required',
-            'remember_token' => 'nullable',
+            //'email' => 'sometimes:required',
+            //'email_verified_at' => 'nullable',
+            //'password' => 'sometimes:required',
+            //'status' => 'sometimes:required',
+            //'remember_token' => 'nullable',
             'created_at' => 'nullable',
             'updated_at' => 'nullable'
         ];
@@ -67,16 +67,16 @@ class User extends OrmApiBaseModel
     protected $fillable = [
         'old_id',
         'name',
-        'email',
-        'email_verified_at',
-        'password',
-        'status',
-        'remember_token',
+        //'email',
+        //'email_verified_at',
+        //'password',
+        //'status',
+        //'remember_token',
         'created_at',
         'updated_at'
     ];
 
-    
+
 
         public function attendances_creator_id(): HasMany
     {
@@ -148,5 +148,5 @@ class User extends OrmApiBaseModel
         return $this->hasMany(School::class, 'updater_id');
     }
 
-    
+
 }
