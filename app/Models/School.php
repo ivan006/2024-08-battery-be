@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
+use QuicklistsOrmApi\OrmApiBaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use QuicklistsOrmApi\OrmApiBaseModel;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class School extends OrmApiBaseModel
 {
@@ -25,7 +26,7 @@ class School extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -41,7 +42,7 @@ class School extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'name' => 'required',
+            'name' => 'sometimes:required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
@@ -82,5 +83,5 @@ class School extends OrmApiBaseModel
         return $this->hasMany(SchoolPartnership::class, 'school_id');
     }
 
-
+    
 }

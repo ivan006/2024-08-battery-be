@@ -41,7 +41,7 @@ class Tag extends OrmApiBaseModel
         return [
             'created_at' => 'nullable',
             'updated_at' => 'nullable',
-            'name' => 'required'
+            'name' => 'sometimes:required'
         ];
     }
 

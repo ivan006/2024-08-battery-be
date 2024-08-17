@@ -41,10 +41,10 @@ class Event extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'name' => 'required',
-            'start_datetime' => 'required',
-            'end_datetime' => 'required',
-            'school_id' => 'required',
+            'name' => 'sometimes:required',
+            'start_datetime' => 'sometimes:required',
+            'end_datetime' => 'sometimes:required',
+            'school_id' => 'sometimes:required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',

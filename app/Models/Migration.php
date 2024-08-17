@@ -39,8 +39,8 @@ class Migration extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'migration' => 'required',
-            'batch' => 'required'
+            'migration' => 'sometimes:required',
+            'batch' => 'sometimes:required'
         ];
     }
 

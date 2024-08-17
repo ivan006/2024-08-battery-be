@@ -42,8 +42,8 @@ class Attendance extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'event_id' => 'required',
-            'child_id' => 'required',
+            'event_id' => 'sometimes:required',
+            'child_id' => 'sometimes:required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',

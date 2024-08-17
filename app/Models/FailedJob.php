@@ -39,12 +39,12 @@ class FailedJob extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'uuid' => 'required',
-            'connection' => 'required',
-            'queue' => 'required',
-            'payload' => 'required',
-            'exception' => 'required',
-            'failed_at' => 'required'
+            'uuid' => 'sometimes:required',
+            'connection' => 'sometimes:required',
+            'queue' => 'sometimes:required',
+            'payload' => 'sometimes:required',
+            'exception' => 'sometimes:required',
+            'failed_at' => 'sometimes:required'
         ];
     }
 

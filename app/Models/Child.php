@@ -41,8 +41,8 @@ class Child extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'name' => 'required',
-            'family_id' => 'required',
+            'name' => 'sometimes:required',
+            'family_id' => 'sometimes:required',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',

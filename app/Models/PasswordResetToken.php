@@ -39,8 +39,8 @@ class PasswordResetToken extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'email' => 'required',
-            'token' => 'required',
+            'email' => 'sometimes:required',
+            'token' => 'sometimes:required',
             'created_at' => 'nullable'
         ];
     }

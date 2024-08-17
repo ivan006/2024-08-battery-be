@@ -41,8 +41,8 @@ class PostTag extends OrmApiBaseModel
         return [
             'created_at' => 'nullable',
             'updated_at' => 'nullable',
-            'post_id' => 'required',
-            'tag_id' => 'required'
+            'post_id' => 'sometimes:required',
+            'tag_id' => 'sometimes:required'
         ];
     }
 

@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use QuicklistsOrmApi\OrmApiBaseModel;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends OrmApiBaseModel
 {
@@ -16,14 +18,14 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-
+            
         ];
     }
 
     public function spouseRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -51,11 +53,11 @@ class User extends OrmApiBaseModel
     {
         return [
             'old_id' => 'nullable',
-            'name' => 'required',
-            'email' => 'required',
+            'name' => 'sometimes:required',
+            'email' => 'sometimes:required',
             'email_verified_at' => 'nullable',
-            'password' => 'required',
-            'status' => 'required',
+            'password' => 'sometimes:required',
+            'status' => 'sometimes:required',
             'remember_token' => 'nullable',
             'created_at' => 'nullable',
             'updated_at' => 'nullable'
@@ -74,7 +76,7 @@ class User extends OrmApiBaseModel
         'updated_at'
     ];
 
-
+    
 
         public function attendances_creator_id(): HasMany
     {
@@ -146,5 +148,5 @@ class User extends OrmApiBaseModel
         return $this->hasMany(School::class, 'updater_id');
     }
 
-
+    
 }

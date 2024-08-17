@@ -39,10 +39,10 @@ class PersonalAccessToken extends OrmApiBaseModel
     public function rules()
     {
         return [
-            'tokenable_type' => 'required',
-            'tokenable_id' => 'required',
-            'name' => 'required',
-            'token' => 'required',
+            'tokenable_type' => 'sometimes:required',
+            'tokenable_id' => 'sometimes:required',
+            'name' => 'sometimes:required',
+            'token' => 'sometimes:required',
             'abilities' => 'nullable',
             'last_used_at' => 'nullable',
             'expires_at' => 'nullable',
