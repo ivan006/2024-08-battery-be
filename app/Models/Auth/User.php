@@ -45,7 +45,8 @@ class User extends Authenticatable
     ];
 
 
-    public function family_memberships(): HasMany
+
+    public function family_memberships(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(FamilyMembership::class, 'user_id');
     }
