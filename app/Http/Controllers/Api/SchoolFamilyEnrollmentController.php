@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\ddd\SchoolFamilyEnrollment;
+use App\Models\SchoolFamilyEnrollment;
 use Illuminate\Http\Request;
 use QuicklistsOrmApi\OrmApi;
 

@@ -20,8 +20,8 @@ class AuthenticatedSessionController extends Controller
         // Authenticate the user
         $request->authenticate();
 
-        // Retrieve the authenticated user
-        $user = $request->user();
+        // Retrieve the authenticated user with family memberships
+        $user = $request->user()->load('family_memberships');
 
         // Check if the user's email is verified
         if (is_null($user->email_verified_at)) {
@@ -30,7 +30,7 @@ class AuthenticatedSessionController extends Controller
             ], 403);
         }
 
-        // Regenerate session
+        // Regenerate session (if needed)
         // $request->session()->regenerate();
 
         // Delete existing tokens
