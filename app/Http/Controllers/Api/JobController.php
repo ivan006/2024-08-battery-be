@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Models\SchoolPartnership;
-use Illuminate\Http\Request;
 use QuicklistsOrmApi\OrmApi;
+use App\Http\Controllers\Controller;
+use App\Models\Job;
+use Illuminate\Http\Request;
 
-class SchoolPartnershipController extends Controller
+class JobController extends Controller
 {
-    protected $itemNameSingular = "School Partnership";
+    protected $itemNameSingular = "Job";
     protected $model;
 
     public function __construct()
     {
-        $this->model = new SchoolPartnership();
+        $this->model = new Job();
     }
 
     /**

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use QuicklistsOrmApi\OrmApi;
 use App\Http\Controllers\Controller;
 use App\Models\SchoolFamilyEnrollment;
 use Illuminate\Http\Request;
-use QuicklistsOrmApi\OrmApi;
 
 class SchoolFamilyEnrollmentController extends Controller
 {

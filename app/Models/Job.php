@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class SchoolPartnership extends OrmApiBaseModel
+class Job extends OrmApiBaseModel
 {
-    protected $table = 'school_partnerships';
+    protected $table = 'jobs';
 
     public $timestamps = false;
 
@@ -26,7 +26,7 @@ class SchoolPartnership extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+            'faileds' => []
         ];
     }
 
@@ -66,5 +66,8 @@ class SchoolPartnership extends OrmApiBaseModel
 
     
 
-    
+        public function faileds(): BelongsToMany
+    {
+        return $this->belongsToMany(Failed::class, 'failed_jobs', 'failed_id', 'jobs_id');
+    }
 }

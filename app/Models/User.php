@@ -41,9 +41,9 @@ class User extends OrmApiBaseModel
             'families_creator_id' => [],
             'families_updater_id' => [],
             'family_memberships' => [],
+            'jobs' => [],
             'school_family_enrollments_creator_id' => [],
             'school_family_enrollments_updater_id' => [],
-            'school_partnerships' => [],
             'schools_creator_id' => [],
             'schools_updater_id' => []
         ];
@@ -123,6 +123,11 @@ class User extends OrmApiBaseModel
         return $this->hasMany(FamilyMembership::class, 'user_id');
     }
 
+        public function jobs(): HasMany
+    {
+        return $this->hasMany(Job::class, 'user_id');
+    }
+
         public function school_family_enrollments_creator_id(): HasMany
     {
         return $this->hasMany(SchoolFamilyEnrollment::class, 'creator_id');
@@ -131,11 +136,6 @@ class User extends OrmApiBaseModel
         public function school_family_enrollments_updater_id(): HasMany
     {
         return $this->hasMany(SchoolFamilyEnrollment::class, 'updater_id');
-    }
-
-        public function school_partnerships(): HasMany
-    {
-        return $this->hasMany(SchoolPartnership::class, 'user_id');
     }
 
         public function schools_creator_id(): HasMany

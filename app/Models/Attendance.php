@@ -18,6 +18,8 @@ class Attendance extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
+            'school' => [],
+            'family' => [],
             'event' => [],
             'child' => [],
             'creator' => [],
@@ -42,6 +44,8 @@ class Attendance extends OrmApiBaseModel
     public function rules()
     {
         return [
+            'school_id' => 'nullable',
+            'family_id' => 'nullable',
             'event_id' => 'sometimes:required',
             'child_id' => 'sometimes:required',
             'creator_id' => 'nullable',
@@ -52,6 +56,8 @@ class Attendance extends OrmApiBaseModel
     }
 
     protected $fillable = [
+        'school_id',
+        'family_id',
         'event_id',
         'child_id',
         'creator_id',
@@ -59,6 +65,16 @@ class Attendance extends OrmApiBaseModel
         'created_at',
         'updated_at'
     ];
+
+        public function school(): BelongsTo
+    {
+        return $this->belongsTo(School::class, 'school_id');
+    }
+
+        public function family(): BelongsTo
+    {
+        return $this->belongsTo(Family::class, 'family_id');
+    }
 
         public function event(): BelongsTo
     {

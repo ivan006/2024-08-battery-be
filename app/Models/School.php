@@ -33,9 +33,10 @@ class School extends OrmApiBaseModel
     public function childRelationships()
     {
         return [
+            'attendances' => [],
             'events' => [],
-            'school_family_enrollments' => [],
-            'school_partnerships' => []
+            'jobs' => [],
+            'school_family_enrollments' => []
         ];
     }
 
@@ -68,19 +69,24 @@ class School extends OrmApiBaseModel
         return $this->belongsTo(User::class, 'updater_id');
     }
 
+        public function attendances(): HasMany
+    {
+        return $this->hasMany(Attendance::class, 'school_id');
+    }
+
         public function events(): HasMany
     {
         return $this->hasMany(Event::class, 'school_id');
     }
 
+        public function jobs(): HasMany
+    {
+        return $this->hasMany(Job::class, 'school_id');
+    }
+
         public function school_family_enrollments(): HasMany
     {
         return $this->hasMany(SchoolFamilyEnrollment::class, 'school_id');
-    }
-
-        public function school_partnerships(): HasMany
-    {
-        return $this->hasMany(SchoolPartnership::class, 'school_id');
     }
 
     
