@@ -4,17 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use QuicklistsOrmApi\OrmApi;
 use App\Http\Controllers\Controller;
-use App\Models\FamilyMembership;
+use App\Models\FamilyTy;
 use Illuminate\Http\Request;
 
-class FamilyMembershipController extends Controller
+class FamilyTyController extends Controller
 {
-    protected $itemNameSingular = "Family Membership";
+    protected $itemNameSingular = "Family Ty";
     protected $model;
 
     public function __construct()
     {
-        $this->model = new FamilyMembership();
+        $this->model = new FamilyTy();
     }
 
     /**

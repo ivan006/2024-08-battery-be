@@ -11,9 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('family_ties', function (Blueprint $table) {
-            //
-        });
+        Schema::rename('family_memberships', 'family_ties');
     }
 
     /**
@@ -21,8 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('family_ties', function (Blueprint $table) {
-            //
-        });
+        Schema::rename('family_ties', 'family_memberships');
     }
 };

@@ -35,7 +35,7 @@ class Family extends OrmApiBaseModel
         return [
             'attendances' => [],
             'children' => [],
-            'family_memberships' => [],
+            'family_ties' => [],
             'school_family_enrollments' => []
         ];
     }
@@ -79,9 +79,9 @@ class Family extends OrmApiBaseModel
         return $this->hasMany(Child::class, 'family_id');
     }
 
-        public function family_memberships(): HasMany
+        public function family_ties(): HasMany
     {
-        return $this->hasMany(FamilyMembership::class, 'family_id');
+        return $this->hasMany(FamilyTy::class, 'family_id');
     }
 
         public function school_family_enrollments(): HasMany

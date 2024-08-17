@@ -26,13 +26,14 @@ class Job extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
+            'faileds' => []
         ];
     }
 
     public function childRelationships()
     {
         return [
-
+            
         ];
     }
 
@@ -63,4 +64,10 @@ class Job extends OrmApiBaseModel
         return $this->belongsTo(School::class, 'school_id');
     }
 
+    
+
+        public function faileds(): BelongsToMany
+    {
+        return $this->belongsToMany(Failed::class, 'failed_jobs', 'failed_id', 'jobs_id');
+    }
 }

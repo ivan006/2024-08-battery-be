@@ -34,8 +34,8 @@ Route::apiResource('events', \App\Http\Controllers\Api\EventController::class);
 Route::apiResource('failed-jobs', \App\Http\Controllers\Api\FailedJobController::class);
 // API routes for families
 Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
-// API routes for family-memberships
-Route::apiResource('family-memberships', \App\Http\Controllers\Api\FamilyMembershipController::class);
+// API routes for family-ties
+Route::apiResource('family-ties', \App\Http\Controllers\Api\FamilyTyController::class);
 // API routes for jobs
 Route::apiResource('jobs', \App\Http\Controllers\Api\JobController::class);
 // API routes for migrations

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class FamilyMembership extends OrmApiBaseModel
+class FamilyTy extends OrmApiBaseModel
 {
-    protected $table = 'family_memberships';
+    protected $table = 'family_ties';
 
     public $timestamps = false;
 
