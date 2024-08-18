@@ -3,7 +3,7 @@
 namespace App\Models\Auth;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\FamilyMembership;
+use App\Models\FamilyTy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -48,6 +48,6 @@ class User extends Authenticatable
 
     public function family_memberships(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(FamilyMembership::class, 'user_id');
+        return $this->hasMany(FamilyTy::class, 'user_id');
     }
 }
