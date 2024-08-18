@@ -27,7 +27,7 @@ class Event extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -38,10 +38,20 @@ class Event extends OrmApiBaseModel
         ];
     }
 
+    public function fieldExtraInfo()
+    {
+        return [
+            'image' => [
+                'ontologyType' => 'file'
+            ]
+        ];
+    }
+
     public function rules()
     {
         return [
             'name' => 'sometimes:required',
+            'image' => 'sometimes:required',
             'start_datetime' => 'sometimes:required',
             'end_datetime' => 'sometimes:required',
             'school_id' => 'sometimes:required',
@@ -54,6 +64,7 @@ class Event extends OrmApiBaseModel
 
     protected $fillable = [
         'name',
+        'image',
         'start_datetime',
         'end_datetime',
         'school_id',
@@ -83,5 +94,5 @@ class Event extends OrmApiBaseModel
         return $this->hasMany(Attendance::class, 'event_id');
     }
 
-    
+
 }
