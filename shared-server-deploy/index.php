@@ -15,7 +15,7 @@ define('LARAVEL_START', microtime(true));
 | instead of starting the framework, which could cause an exception.
 |
 */
-$app_dir = '/usr/home/bluegpyuty/2024-05-era';
+$app_dir = '/usr/home/bluegpyuty/2024-08-battery-be';
 
 if (file_exists($maintenance = $app_dir.'/storage/framework/maintenance.php')) {
     require $maintenance;
