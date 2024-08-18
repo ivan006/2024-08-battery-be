@@ -1396,7 +1396,7 @@
         },
         {
             "name": "ivanc006/quicklists-laravel-orm-api",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api.git",
