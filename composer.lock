@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8664c013da585e0f08838aa13dfc59bb",
+    "content-hash": "4ef4e6c449dd1eeae929c0970c95b283",
     "packages": [
         {
             "name": "aws/aws-crt-php",
@@ -1548,16 +1548,16 @@
         },
         {
             "name": "ivanc006/quicklists-laravel-orm-api",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api.git",
-                "reference": "5e036390c5d517ebd3d8943d382b8bff5213ae05"
+                "reference": "5b275752849df2ba1b342b383cf83ae7a5e215a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivan006/2024-05-quicklists-laravel-orm-api/zipball/5e036390c5d517ebd3d8943d382b8bff5213ae05",
-                "reference": "5e036390c5d517ebd3d8943d382b8bff5213ae05",
+                "url": "https://api.github.com/repos/ivan006/2024-05-quicklists-laravel-orm-api/zipball/5b275752849df2ba1b342b383cf83ae7a5e215a6",
+                "reference": "5b275752849df2ba1b342b383cf83ae7a5e215a6",
                 "shasum": ""
             },
             "require": {
@@ -1591,9 +1591,9 @@
             "description": "A Laravel ORM API package for QuickLists.",
             "support": {
                 "issues": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/issues",
-                "source": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/tree/v1.0.7"
+                "source": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/tree/v1.0.8"
             },
-            "time": "2024-08-18T16:03:42+00:00"
+            "time": "2024-08-19T17:13:14+00:00"
         },
         {
             "name": "krlove/code-generator",
