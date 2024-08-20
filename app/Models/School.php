@@ -26,7 +26,7 @@ class School extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -40,10 +40,20 @@ class School extends OrmApiBaseModel
         ];
     }
 
+    public function fieldExtraInfo()
+    {
+        return [
+            'image' => [
+                'ontologyType' => 'file'
+            ]
+        ];
+    }
+
     public function rules()
     {
         return [
             'name' => 'sometimes:required',
+            'image' => 'nullable',
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
@@ -53,6 +63,7 @@ class School extends OrmApiBaseModel
 
     protected $fillable = [
         'name',
+        'image',
         'creator_id',
         'updater_id',
         'created_at',
@@ -89,5 +100,5 @@ class School extends OrmApiBaseModel
         return $this->hasMany(SchoolFamilyEnrollment::class, 'school_id');
     }
 
-    
+
 }

@@ -51,7 +51,7 @@ class Event extends OrmApiBaseModel
     {
         return [
             'name' => 'sometimes:required',
-            'image' => 'sometimes:required',
+            'image' => 'nullable',
             'start_datetime' => 'sometimes:required',
             'end_datetime' => 'sometimes:required',
             'school_id' => 'sometimes:required',
