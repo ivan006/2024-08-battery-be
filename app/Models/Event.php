@@ -43,7 +43,13 @@ class Event extends OrmApiBaseModel
         return [
             'image' => [
                 'ontologyType' => 'file'
-            ]
+            ],
+            'start_datetime' => [
+                'ontologyType' => 'time'
+            ],
+            'end_datetime' => [
+                'ontologyType' => 'time'
+            ],
         ];
     }
 
