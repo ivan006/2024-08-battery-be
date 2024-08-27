@@ -50,6 +50,12 @@ class Event extends OrmApiBaseModel
             'end_datetime' => [
                 'ontologyType' => 'time'
             ],
+            //'latitude' => [
+            //    //'ontologyType' => 'time'
+            //],
+            //'longitude' => [
+            //    //'ontologyType' => 'time'
+            //],
         ];
     }
 
@@ -64,7 +70,9 @@ class Event extends OrmApiBaseModel
             'creator_id' => 'nullable',
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
-            'updated_at' => 'nullable'
+            'updated_at' => 'nullable',
+            'latitude' => 'nullable',
+            'longitude' => 'nullable',
         ];
     }
 
@@ -77,7 +85,9 @@ class Event extends OrmApiBaseModel
         'creator_id',
         'updater_id',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'latitude',
+        'longitude',
     ];
 
         public function school(): BelongsTo
