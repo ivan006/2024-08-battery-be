@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('location_substates', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('state_id')->constrained('location_states');
             $table->timestamps();
         });
     }
