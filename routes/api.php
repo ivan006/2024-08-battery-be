@@ -56,8 +56,8 @@ Route::apiResource('schools', \App\Http\Controllers\Api\SchoolController::class)
 Route::apiResource('tags', \App\Http\Controllers\Api\TagController::class);
 // API routes for users
 Route::apiResource('users', \App\Http\Controllers\Api\UserController::class);
-Route::apiResource('location_countries', \App\Http\Controllers\Api\LocationCountryController::class);
-Route::apiResource('location_states', \App\Http\Controllers\Api\LocationStateController::class);
-Route::apiResource('location_substates', \App\Http\Controllers\Api\LocationSubstateController::class);
-Route::apiResource('location_towns', \App\Http\Controllers\Api\LocationTownController::class);
-Route::apiResource('location_suburbs', \App\Http\Controllers\Api\LocationSuburbController::class);
+Route::apiResource('location-countries', \App\Http\Controllers\Api\LocationCountryController::class);
+Route::apiResource('location-states', \App\Http\Controllers\Api\LocationStateController::class);
+Route::apiResource('location-substates', \App\Http\Controllers\Api\LocationSubstateController::class);
+Route::apiResource('location-towns', \App\Http\Controllers\Api\LocationTownController::class);
+Route::apiResource('location-suburbs', \App\Http\Controllers\Api\LocationSuburbController::class);
