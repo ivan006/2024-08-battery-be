@@ -73,6 +73,18 @@ class Event extends OrmApiBaseModel
             'updated_at' => 'nullable',
             'latitude' => 'nullable',
             'longitude' => 'nullable',
+            
+            'location_google_id' => 'nullable',
+            'location_address_street_address' => 'nullable',
+            'location_address_building_address' => 'nullable',
+            'location_address_place_name' => 'nullable',
+            'location_coordinates_longitude' => 'nullable',
+            'location_coordinates_latitude' => 'nullable',
+            'location_admin_division_country_id' => 'nullable',
+            'location_admin_division_state_id' => 'nullable',
+            'location_admin_division_substate_id' => 'nullable',
+            'location_admin_division_town_id' => 'nullable',
+            'location_admin_division_suburb_id' => 'nullable',
         ];
     }
 
@@ -88,6 +100,18 @@ class Event extends OrmApiBaseModel
         'updated_at',
         'latitude',
         'longitude',
+
+        'location_google_id',
+        'location_address_street_address',
+        'location_address_building_address',
+        'location_address_place_name',
+        'location_coordinates_longitude',
+        'location_coordinates_latitude',
+        'location_admin_division_country_id',
+        'location_admin_division_state_id',
+        'location_admin_division_substate_id',
+        'location_admin_division_town_id',
+        'location_admin_division_suburb_id',
     ];
 
         public function school(): BelongsTo
