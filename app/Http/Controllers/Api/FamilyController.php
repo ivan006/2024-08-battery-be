@@ -31,7 +31,7 @@ class FamilyController extends Controller
      */
     public function store(Request $request)
     {
-        $result = OrmApi::createItemWithOptionalBulkRelations(
+        $result = OrmApi::createItem(
             $request,
             $this->model,
             $this->itemNameSingular

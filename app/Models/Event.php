@@ -73,7 +73,7 @@ class Event extends OrmApiBaseModel
             'updated_at' => 'nullable',
             'latitude' => 'nullable',
             'longitude' => 'nullable',
-            
+
             'location_google_id' => 'nullable',
             'location_address_street_address' => 'nullable',
             'location_address_building_address' => 'nullable',
