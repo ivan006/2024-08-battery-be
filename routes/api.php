@@ -61,3 +61,4 @@ Route::apiResource('location-states', \App\Http\Controllers\Api\LocationStateCon
 Route::apiResource('location-substates', \App\Http\Controllers\Api\LocationSubstateController::class);
 Route::apiResource('location-towns', \App\Http\Controllers\Api\LocationTownController::class);
 Route::apiResource('location-suburbs', \App\Http\Controllers\Api\LocationSuburbController::class);
+Route::apiResource('private-events', \App\Http\Controllers\Api\PrivateEventController::class);
