@@ -8,21 +8,25 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::table('schools', function (Blueprint $table) {
-            //
+            $table->text('about_us')->nullable(); // You can set nullable if it's optional
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('schools', function (Blueprint $table) {
-            //
+            $table->dropColumn('about_us');
         });
     }
 };
