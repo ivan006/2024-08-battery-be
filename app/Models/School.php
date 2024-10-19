@@ -64,6 +64,7 @@ class School extends OrmApiBaseModel
     protected $fillable = [
         'name',
         'image',
+        'about_us',
         'creator_id',
         'updater_id',
         'created_at',

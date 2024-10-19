@@ -67,6 +67,7 @@ class User extends OrmApiBaseModel
     protected $fillable = [
         'old_id',
         'name',
+        'primary_family_id',
         //'email',
         //'email_verified_at',
         //'password',
@@ -76,7 +77,10 @@ class User extends OrmApiBaseModel
         'updated_at'
     ];
 
-
+    public function primary_family(): BelongsTo
+    {
+        return $this->belongsTo(Family::class, 'primary_family_id');
+    }
 
         public function attendances_creator_id(): HasMany
     {
