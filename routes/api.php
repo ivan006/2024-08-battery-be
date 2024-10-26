@@ -35,7 +35,7 @@ Route::apiResource('failed-jobs', \App\Http\Controllers\Api\FailedJobController:
 // API routes for families
 Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
 // API routes for family-ties
-Route::apiResource('family-ties', \App\Http\Controllers\Api\FamilyTyController::class);
+Route::apiResource('family-ties', \App\Http\Controllers\Api\FamilyLinkController::class);
 // API routes for jobs
 Route::apiResource('jobs', \App\Http\Controllers\Api\JobController::class);
 // API routes for migrations

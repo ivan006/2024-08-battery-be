@@ -81,7 +81,7 @@ class Family extends OrmApiBaseModel
 
         public function family_links(): HasMany
     {
-        return $this->hasMany(FamilyTy::class, 'family_id');
+        return $this->hasMany(FamilyLink::class, 'family_id');
     }
 
         public function school_family_enrollments(): HasMany

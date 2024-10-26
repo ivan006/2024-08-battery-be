@@ -124,7 +124,7 @@ class User extends OrmApiBaseModel
 
         public function family_links(): HasMany
     {
-        return $this->hasMany(FamilyTy::class, 'user_id');
+        return $this->hasMany(FamilyLink::class, 'user_id');
     }
 
         public function jobs(): HasMany
