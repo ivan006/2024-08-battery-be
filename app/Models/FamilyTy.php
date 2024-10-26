@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class FamilyTy extends OrmApiBaseModel
 {
-    protected $table = 'family_ties';
+    protected $table = 'family_links';
 
     public $timestamps = false;
 
@@ -26,14 +26,14 @@ class FamilyTy extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
     public function childRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -64,7 +64,7 @@ class FamilyTy extends OrmApiBaseModel
         return $this->belongsTo(Family::class, 'family_id');
     }
 
-    
 
-    
+
+
 }

@@ -26,7 +26,7 @@ class Family extends OrmApiBaseModel
     public function spouseRelationships()
     {
         return [
-            
+
         ];
     }
 
@@ -35,7 +35,7 @@ class Family extends OrmApiBaseModel
         return [
             'attendances' => [],
             'children' => [],
-            'family_ties' => [],
+            'family_links' => [],
             'school_family_enrollments' => []
         ];
     }
@@ -79,7 +79,7 @@ class Family extends OrmApiBaseModel
         return $this->hasMany(Child::class, 'family_id');
     }
 
-        public function family_ties(): HasMany
+        public function family_links(): HasMany
     {
         return $this->hasMany(FamilyTy::class, 'family_id');
     }
@@ -89,5 +89,5 @@ class Family extends OrmApiBaseModel
         return $this->hasMany(SchoolFamilyEnrollment::class, 'family_id');
     }
 
-    
+
 }
