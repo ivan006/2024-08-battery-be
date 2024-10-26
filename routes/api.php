@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
 Route::middleware('auth:sanctum')->group(function () {
     // This route will be accessible only by authenticated users via Sanctum
     Route::get('/user', function (Request $request) {
@@ -70,43 +73,85 @@ Route::middleware('auth:sanctum')->group(function () {
 
 
 
-Route::get('posts', [\App\Http\Controllers\Api\PostController::class, 'index'])->name('posts.index');
 
 // API routes for attendances
 Route::get('attendances', [\App\Http\Controllers\Api\AttendanceController::class, 'index'])->name('attendances.index');
+Route::get('attendances/{id}', [\App\Http\Controllers\Api\AttendanceController::class, 'show'])->name('attendances.show');
+
 // API routes for children
 Route::get('children', [\App\Http\Controllers\Api\ChildController::class, 'index'])->name('children.index');
+Route::get('children/{id}', [\App\Http\Controllers\Api\ChildController::class, 'show'])->name('children.show');
+
 // API routes for events
 Route::get('events', [\App\Http\Controllers\Api\EventController::class, 'index'])->name('events.index');
+Route::get('events/{id}', [\App\Http\Controllers\Api\EventController::class, 'show'])->name('events.show');
+
 // API routes for failed-jobs
 Route::get('failed-jobs', [\App\Http\Controllers\Api\FailedJobController::class, 'index'])->name('failed-jobs.index');
+Route::get('failed-jobs/{id}', [\App\Http\Controllers\Api\FailedJobController::class, 'show'])->name('failed-jobs.show');
+
 // API routes for families
 Route::get('families', [\App\Http\Controllers\Api\FamilyController::class, 'index'])->name('families.index');
+Route::get('families/{id}', [\App\Http\Controllers\Api\FamilyController::class, 'show'])->name('families.show');
+
 // API routes for family-links
 Route::get('family-links', [\App\Http\Controllers\Api\FamilyLinkController::class, 'index'])->name('family-links.index');
+Route::get('family-links/{id}', [\App\Http\Controllers\Api\FamilyLinkController::class, 'show'])->name('family-links.show');
+
 // API routes for jobs
 Route::get('jobs', [\App\Http\Controllers\Api\JobController::class, 'index'])->name('jobs.index');
+Route::get('jobs/{id}', [\App\Http\Controllers\Api\JobController::class, 'show'])->name('jobs.show');
+
 // API routes for migrations
 Route::get('migrations', [\App\Http\Controllers\Api\MigrationController::class, 'index'])->name('migrations.index');
+Route::get('migrations/{id}', [\App\Http\Controllers\Api\MigrationController::class, 'show'])->name('migrations.show');
+
 // API routes for password-reset-tokens
 Route::get('password-reset-tokens', [\App\Http\Controllers\Api\PasswordResetTokenController::class, 'index'])->name('password-reset-tokens.index');
+Route::get('password-reset-tokens/{id}', [\App\Http\Controllers\Api\PasswordResetTokenController::class, 'show'])->name('password-reset-tokens.show');
+
 // API routes for personal-access-tokens
 Route::get('personal-access-tokens', [\App\Http\Controllers\Api\PersonalAccessTokenController::class, 'index'])->name('personal-access-tokens.index');
+Route::get('personal-access-tokens/{id}', [\App\Http\Controllers\Api\PersonalAccessTokenController::class, 'show'])->name('personal-access-tokens.show');
+
 // API routes for post-tags
 Route::get('post-tags', [\App\Http\Controllers\Api\PostTagController::class, 'index'])->name('post-tags.index');
+Route::get('post-tags/{id}', [\App\Http\Controllers\Api\PostTagController::class, 'show'])->name('post-tags.show');
+
 // API routes for posts
 Route::get('posts', [\App\Http\Controllers\Api\PostController::class, 'index'])->name('posts.index');
+Route::get('posts/{id}', [\App\Http\Controllers\Api\PostController::class, 'show'])->name('posts.show');
+
 // API routes for school-family-enrollments
 Route::get('school-family-enrollments', [\App\Http\Controllers\Api\SchoolFamilyEnrollmentController::class, 'index'])->name('school-family-enrollments.index');
+Route::get('school-family-enrollments/{id}', [\App\Http\Controllers\Api\SchoolFamilyEnrollmentController::class, 'show'])->name('school-family-enrollments.show');
+
 // API routes for schools
 Route::get('schools', [\App\Http\Controllers\Api\SchoolController::class, 'index'])->name('schools.index');
+Route::get('schools/{id}', [\App\Http\Controllers\Api\SchoolController::class, 'show'])->name('schools.show');
+
 // API routes for tags
 Route::get('tags', [\App\Http\Controllers\Api\TagController::class, 'index'])->name('tags.index');
+Route::get('tags/{id}', [\App\Http\Controllers\Api\TagController::class, 'show'])->name('tags.show');
+
 // API routes for users
 Route::get('users', [\App\Http\Controllers\Api\UserController::class, 'index'])->name('users.index');
+Route::get('users/{id}', [\App\Http\Controllers\Api\UserController::class, 'show'])->name('users.show');
+
 Route::get('location-countries', [\App\Http\Controllers\Api\LocationCountryController::class, 'index'])->name('location-countries.index');
+Route::get('location-countries/{id}', [\App\Http\Controllers\Api\LocationCountryController::class, 'show'])->name('location-countries.show');
+
 Route::get('location-states', [\App\Http\Controllers\Api\LocationStateController::class, 'index'])->name('location-states.index');
+Route::get('location-states/{id}', [\App\Http\Controllers\Api\LocationStateController::class, 'show'])->name('location-states.show');
+
 Route::get('location-substates', [\App\Http\Controllers\Api\LocationSubstateController::class, 'index'])->name('location-substates.index');
+Route::get('location-substates/{id}', [\App\Http\Controllers\Api\LocationSubstateController::class, 'show'])->name('location-substates.show');
+
 Route::get('location-towns', [\App\Http\Controllers\Api\LocationTownController::class, 'index'])->name('location-towns.index');
+Route::get('location-towns/{id}', [\App\Http\Controllers\Api\LocationTownController::class, 'show'])->name('location-towns.show');
+
 Route::get('location-suburbs', [\App\Http\Controllers\Api\LocationSuburbController::class, 'index'])->name('location-suburbs.index');
+Route::get('location-suburbs/{id}', [\App\Http\Controllers\Api\LocationSuburbController::class, 'show'])->name('location-suburbs.show');
+
 Route::get('private-events', [\App\Http\Controllers\Api\PrivateEventController::class, 'index'])->name('private-events.index');
+Route::get('private-events/{id}', [\App\Http\Controllers\Api\PrivateEventController::class, 'show'])->name('private-events.show');
