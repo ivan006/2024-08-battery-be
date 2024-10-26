@@ -18,7 +18,7 @@ class User extends OrmApiBaseModel
     public function parentRelationships()
     {
         return [
-
+            'primary_family' => [],
         ];
     }
 
