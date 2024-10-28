@@ -1548,16 +1548,16 @@
         },
         {
             "name": "ivanc006/quicklists-laravel-orm-api",
-            "version": "1.0.8",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api.git",
-                "reference": "5b275752849df2ba1b342b383cf83ae7a5e215a6"
+                "reference": "e17908d30f069d5f0900dc7697ba9cea50381052"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ivan006/2024-05-quicklists-laravel-orm-api/zipball/5b275752849df2ba1b342b383cf83ae7a5e215a6",
-                "reference": "5b275752849df2ba1b342b383cf83ae7a5e215a6",
+                "url": "https://api.github.com/repos/ivan006/2024-05-quicklists-laravel-orm-api/zipball/e17908d30f069d5f0900dc7697ba9cea50381052",
+                "reference": "e17908d30f069d5f0900dc7697ba9cea50381052",
                 "shasum": ""
             },
             "require": {
@@ -1591,9 +1591,9 @@
             "description": "A Laravel ORM API package for QuickLists.",
             "support": {
                 "issues": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/issues",
-                "source": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/tree/v1.0.8"
+                "source": "https://github.com/ivan006/2024-05-quicklists-laravel-orm-api/tree/v1.0.9"
             },
-            "time": "2024-08-19T17:13:14+00:00"
+            "time": "2024-10-28T19:13:04+00:00"
         },
         {
             "name": "krlove/code-generator",
