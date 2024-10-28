@@ -36,7 +36,7 @@ Route::middleware('auth:sanctum')->group(function () {
 // API routes for failed-jobs
     Route::apiResource('failed-jobs', \App\Http\Controllers\Api\FailedJobController::class);
 // API routes for families
-    Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
+//    Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
 // API routes for family-links
     Route::apiResource('family-links', \App\Http\Controllers\Api\FamilyLinkController::class);
 // API routes for jobs
@@ -93,6 +93,7 @@ Route::get('failed-jobs/{failed_job}', [\App\Http\Controllers\Api\FailedJobContr
 // API routes for families
 Route::get('families', [\App\Http\Controllers\Api\FamilyController::class, 'index'])->name('families.index');
 Route::get('families/{family}', [\App\Http\Controllers\Api\FamilyController::class, 'show'])->name('families.show');
+Route::apiResource('families', \App\Http\Controllers\Api\FamilyController::class);
 
 // API routes for family-links
 Route::get('family-links', [\App\Http\Controllers\Api\FamilyLinkController::class, 'index'])->name('family-links.index');
