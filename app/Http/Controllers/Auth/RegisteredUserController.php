@@ -22,11 +22,12 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => 'required|string',
             'c_password' => 'required|same:password'
         ]);
 
+        // Create the user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -36,13 +37,12 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
+        // Trigger email verification notification
+        $user->sendEmailVerificationNotification();
 
-        $token = $user->createToken('api-token');
-
+        // Return a response indicating that they need to verify their email
         return response()->json([
-            'user' => $user,
-            'token' => $token->plainTextToken,
+            'message' => 'Registration successful! Please verify your email to complete the registration.',
         ]);
     }
 }
