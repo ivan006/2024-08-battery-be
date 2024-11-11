@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
 
         // Return a response indicating that they need to verify their email
         return response()->json([
+            'user' => $user,
             'message' => 'Registration successful! Please verify your email to complete the registration.',
         ]);
     }
