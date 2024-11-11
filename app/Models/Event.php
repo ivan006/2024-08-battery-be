@@ -50,12 +50,6 @@ class Event extends OrmApiBaseModel
             'end_datetime' => [
                 'ontologyType' => 'time'
             ],
-            //'latitude' => [
-            //    //'ontologyType' => 'time'
-            //],
-            //'longitude' => [
-            //    //'ontologyType' => 'time'
-            //],
         ];
     }
 
@@ -71,8 +65,6 @@ class Event extends OrmApiBaseModel
             'updater_id' => 'nullable',
             'created_at' => 'nullable',
             'updated_at' => 'nullable',
-            'latitude' => 'nullable',
-            'longitude' => 'nullable',
 
             'location_google_id' => 'nullable',
             'location_address_street_address' => 'nullable',
@@ -98,8 +90,6 @@ class Event extends OrmApiBaseModel
         'updater_id',
         'created_at',
         'updated_at',
-        'latitude',
-        'longitude',
 
         'location_google_id',
         'location_address_street_address',
